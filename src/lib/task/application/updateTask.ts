@@ -1,27 +1,27 @@
 import { Task } from "../domain/task";
 import { TaskRepository } from "../domain/taskRepository";
+import { RegisterCommandTask } from "./dtos/registerCommand.js";
+
+// type RequireKey<T, K extends keyof T> = T & Required<Pick<T, K>>;
+type UpdateTask = Omit<RegisterCommandTask, "completed" | "createdAt" | "updatedAt" | "userId" | "id">;
+interface UpdateTaskCommand {
+  taskId: string;
+  userId: string;
+  data: UpdateTask;
+};
 
 export class UpdateTaskUseCase {
   constructor(private taskRepository: TaskRepository) {}
 
-  async run(
-    id: string,
-    updateTask: {
-      title: string;
-      description: string;
-      completed: boolean;
-    }
-  ): Promise<Task> {
-    const task = await this.taskRepository.findTaskById(id);
+  async run(command: UpdateTaskCommand): Promise<Task> {
+    const task = await this.taskRepository.findTaskByIdAndUserId(command.taskId, command.userId);
 
-    if (!task) throw new Error(`Task not found ${id}`);
+    if(!task) throw new Error(`Task not found ${command.taskId}`);
 
-    task.update({
-      title: updateTask.title,
-      description: updateTask.description,
-      completed: updateTask.completed,
-    });
+    task.update(command.data);
 
-    return await this.taskRepository.updateTask(id, task);
+    await this.taskRepository.updateTask(command.taskId, task)
+
+    return task;
   }
 }
