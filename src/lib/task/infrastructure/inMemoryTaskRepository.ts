@@ -1,5 +1,5 @@
-import { TaskRepository } from "../domain/taskRepository";
-import { Task, TaskProps } from "../domain/task";
+import { TaskRepository } from "../domain/taskRepository.js";
+import { Task, TaskProps } from "../domain/task.js";
 
 export class InMemoryTaskRepository implements TaskRepository {
   private tasks: Map<string, TaskProps> = new Map();

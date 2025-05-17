@@ -1,4 +1,4 @@
-import { User } from "../domain/user";
+import { User } from "../domain/user.js";
 import { UserRepository } from "../domain/user-repository";
 
 export class InMemoryUserRepository implements UserRepository {

@@ -1,6 +1,6 @@
-import { Task } from "../domain/task";
-import { TaskRepository } from "../domain/taskRepository";
-import { GetByIdUseCase } from "../../user/application/getByIdUseCase";
+import { Task } from "../domain/task.js";
+import { TaskRepository } from "../domain/taskRepository.js";
+import { GetByIdUseCase } from "../../user/application/getByIdUseCase.js";
 
 export class GetTaskAllUseCase {
   constructor(

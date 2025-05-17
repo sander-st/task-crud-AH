@@ -1,5 +1,5 @@
-import { Task } from "../domain/task";
-import { TaskRepository } from "../domain/taskRepository";
+import { Task } from "../domain/task.js";
+import { TaskRepository } from "../domain/taskRepository.js";
 
 export class GetTaskByIdUseCase {
   constructor(private taskRepository: TaskRepository) {}

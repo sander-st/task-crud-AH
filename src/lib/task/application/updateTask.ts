@@ -1,5 +1,5 @@
-import { Task } from "../domain/task";
-import { TaskRepository } from "../domain/taskRepository";
+import { Task } from "../domain/task.js";
+import { TaskRepository } from "../domain/taskRepository.js";
 import { RegisterCommandTask } from "./dtos/registerCommand.js";
 
 // type RequireKey<T, K extends keyof T> = T & Required<Pick<T, K>>;

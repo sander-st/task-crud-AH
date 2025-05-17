@@ -4,7 +4,7 @@ import { GetAllUserUseCase } from "../../user/application/getAllUserUseCase.js";
 import { GetByIdUseCase } from "../../user/application/getByIdUseCase.js";
 
 // command user register
-import { RegisterUserCommandSchema } from "../../user/application/dtos/registerUserCommand";
+import { RegisterUserCommandSchema } from "../../user/application/dtos/registerUserCommand.js";
 
 export class UserController {
   constructor(

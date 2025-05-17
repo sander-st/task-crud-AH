@@ -1,6 +1,6 @@
-import { RegisterUserCommandSchema, RegisterUserCommand } from "./dtos/registerUserCommand";
+import { RegisterUserCommandSchema, RegisterUserCommand } from "./dtos/registerUserCommand.js";
 import { UserRepository } from "../domain/user-repository";
-import { User } from "../domain/user";
+import { User } from "../domain/user.js";
 
 export class CreateUserUseCase {
   private constructor(private readonly userRepository: UserRepository) {}

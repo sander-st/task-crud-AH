@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { UserController } from "./express-user.controller";
+import { UserController } from "./express-user.controller.js";
 import { userContainer } from "../../shared/service-container.js";
 
 const userController = userContainer.resolve<UserController>('userController')
