@@ -236,3 +236,5 @@ Se ha intentado adherir a los principios SOLID:
   - Para proyectos más grandes, considerar librerías de DI más robustas como `tsyringe` o `InversifyJS`.
 - **Atomicidad en Operaciones:**
   - Para operaciones que involucren múltiples cambios (ej. crear una entidad y luego otra relacionada), considerar patrones de transacción si se usa una BD que lo soporte.
+
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/sander-st/task-crud-AH)
